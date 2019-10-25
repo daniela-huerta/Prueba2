@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>  
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -496,7 +496,7 @@
 								<li class="nav-item"><a href="datatable_basic.html" class="nav-link">Lista de empleados</a></li>
 							</ul></li>
 
-							<li class="nav-item nav-item-submenu">
+						<li class="nav-item nav-item-submenu">
 							<a href="#" class="nav-link"><i class="icon-airplane2"></i> <span>Vacaciones</span></a>
 							<ul class="nav nav-group-sub" data-submenu-title="Form components">
 								<li class="nav-item"><a href="agregar_vacaciones.html" class="nav-link">Solicitar vacaciones</a></li>
@@ -1270,7 +1270,7 @@
 			<div class="page-header page-header-light">
 				<div class="page-header-content header-elements-md-inline">
 					<div class="page-title d-flex">
-						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Listado</span> - Vacaciones</h4>
+						<h4><i class="icon-arrow-left52 mr-2"></i> <span class="font-weight-semibold">Listado</span> - Tutorías</h4>
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 
@@ -1279,8 +1279,8 @@
 							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-bars-alt text-primary"></i><span>Statistics</span></a>
 							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-calculator text-primary"></i> <span>Invoices</span></a>
 							<a href="#" class="btn btn-link btn-float text-default"><i class="icon-calendar5 text-primary"></i> <span>Schedule</span></a>
-						</div> 
-					</div> -->
+						</div> -->
+					</div> 
 				</div>
 
 				<div class="breadcrumb-line breadcrumb-line-light header-elements-md-inline">
@@ -1294,7 +1294,7 @@
 						<a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
 					</div>
 
-					<!--<div class="header-elements d-none">
+					<div class="header-elements d-none">
 						<div class="breadcrumb justify-content-center">
 							<a href="#" class="breadcrumb-elements-item">
 								<i class="icon-comment-discussion mr-2"></i>
@@ -1316,7 +1316,7 @@
 								</div>
 							</div>
 						</div>
-					</div>-->
+					</div>
 				</div>
 			</div>
 			<!-- /page header -->
@@ -1328,7 +1328,7 @@
 				<!-- Basic datatable -->
 				<div class="card">
 					<div class="card-header header-elements-inline">
-						<h5 class="card-title">Listado de vacaciones</h5>
+						<h5 class="card-title">Listado de tutorías</h5>
 						<div class="header-elements">
 							<div class="list-icons">
 		                		<a class="list-icons-item" data-action="collapse"></a>
@@ -1338,41 +1338,936 @@
 	                	</div>
 					</div>
 
-
 					<div class="card-body">
 
-                        <p> A continuación se muestra el registro de las vacaciones programadas.</p>
+                        <p> A continuación se muestra el registro de las tutorías.</p>
 						<!-- The <code>DataTables</code> is a highly flexible tool, based upon the foundations of progressive enhancement, and will add advanced interaction controls to any HTML table. DataTables has most features enabled by default, so all you need to do to use it with your own tables is to call the construction function. Searching, ordering, paging etc goodness will be immediately added to the table, as shown in this example. <strong>Datatables support all available table styling.</strong> -->
+					<td><button type="button" style ="background: pink" class="btn btn-primary btn-sm"><a href="agregar_tutorias.html">Agregar</a></button></td>
 					</div>
 
-					<div id="DataTables_Table_0_filter" class="dataTables_filter"><label><span>Buscar:</span> <input type="search" class="" placeholder="Buscar..." aria-controls="DataTables_Table_0"></label> 
-						<div class="list-icons">
-					        <a href="#" class="list-icons-item text-primary-600"><i class="icon-pencil7"></i></a>
-					        <a href="#" class="list-icons-item text-danger-600"><i class="icon-trash"></i></a>
-					        <a href="#" class="list-icons-item text-teal-600"><i class="icon-cog6"></i></a>
-					    </div>></div>
-					                					        
+					<!--<div id="DataTables_Table_0_filter" class="dataTables_filter"><label><span>Buscar:</span> <input type="search" class="" placeholder="Buscar..." aria-controls="DataTables_Table_0"></label> 
+					</div>-->
 
+
+				<!-- Edit modal -->
+				<div id="edit_modal1" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="001"></td>
+											<td><input type="text" class="form-control" value="18/10/2019"></td>
+											<td><input type="text" class="form-control" value="Seguimiento Académico"></td>
+											<td><input type="text" class="form-control" value="60"></td>
+											<td><input type="text" class="form-control" value="Mario Humberto Rodríguez Chávez"></td>
+											<td><input type="text" class="form-control" value="Tutorías"></td>
+											<td><input type="text" class="form-control" value="1930526"></td>
+											<td><input type="text" class="form-control" value="Jesus Eduardo Uriegas Ibarra"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+                <!-- Edit modal -->
+				<div id="edit_modal2" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="002"></td>
+											<td><input type="text" class="form-control" value="01/10/2019"></td>
+											<td><input type="text" class="form-control" value="Personal"></td>
+											<td><input type="text" class="form-control" value="60"></td>
+											<td><input type="text" class="form-control" value="Mario Humberto Rodríguez Chávez"></td>
+											<td><input type="text" class="form-control" value="Tutorías"></td>
+											<td><input type="text" class="form-control" value="1930439"></td>
+											<td><input type="text" class="form-control" value="Sandra Anel Báez Guerrero"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+                <!-- Edit modal -->
+				<div id="edit_modal3" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="003"></td>
+											<td><input type="text" class="form-control" value="24/10/2019"></td>
+											<td><input type="text" class="form-control" value="Orientación"></td>
+											<td><input type="text" class="form-control" value="60"></td>
+											<td><input type="text" class="form-control" value="Mario Humberto Rodríguez Chávez"></td>
+											<td><input type="text" class="form-control" value="Tutorías"></td>
+											<td><input type="text" class="form-control" value="1930427"></td>
+											<td><input type="text" class="form-control" value="Andrea Joseline Charles Santos"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal4" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="004"></td>
+											<td><input type="text" class="form-control" value="17/10/2019"></td>
+											<td><input type="text" class="form-control" value="Algoritmos"></td>
+											<td><input type="text" class="form-control" value="48"></td>
+											<td><input type="text" class="form-control" value="Jorge Arturo Hernández Almazán"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930329"></td>
+											<td><input type="text" class="form-control" value="Aldo Puga Vega"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal5" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="005"></td>
+											<td><input type="text" class="form-control" value="08/10/2019"></td>
+											<td><input type="text" class="form-control" value="Virtualización"></td>
+											<td><input type="text" class="form-control" value="48"></td>
+											<td><input type="text" class="form-control" value="Jorge Arturo Hernández Almazán"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930256"></td>
+											<td><input type="text" class="form-control" value="Jose Arturo Alcocer Morales"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal6" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="006"></td>
+											<td><input type="text" class="form-control" value="08/10/2019"></td>
+											<td><input type="text" class="form-control" value="Virtualización"></td>
+											<td><input type="text" class="form-control" value="48"></td>
+											<td><input type="text" class="form-control" value="Jorge Arturo Hernández Almazán"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930167"></td>
+											<td><input type="text" class="form-control" value="Angel Martin Reyes Balboa"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal7" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="007"></td>
+											<td><input type="text" class="form-control" value="09/10/2019"></td>
+											<td><input type="text" class="form-control" value="Números imaginarios"></td>
+											<td><input type="text" class="form-control" value="55"></td>
+											<td><input type="text" class="form-control" value="Eréndira Gutiérrez Meza"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930257"></td>
+											<td><input type="text" class="form-control" value="Ana Gabriela Lopez Reyes"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal8" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="008"></td>
+											<td><input type="text" class="form-control" value="09/10/2019"></td>
+											<td><input type="text" class="form-control" value="Números imaginarios"></td>
+											<td><input type="text" class="form-control" value="55"></td>
+											<td><input type="text" class="form-control" value="Eréndira Gutiérrez Meza"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930611"></td>
+											<td><input type="text" class="form-control" value="Estefany Sarai Hernandez Vidales"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal9" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="009"></td>
+											<td><input type="text" class="form-control" value="09/10/2019"></td>
+											<td><input type="text" class="form-control" value="Números imaginarios"></td>
+											<td><input type="text" class="form-control" value="55"></td>
+											<td><input type="text" class="form-control" value="Eréndira Gutiérrez Meza"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930468"></td>
+											<td><input type="text" class="form-control" value="Karen Lizeth Garcia Rivera"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal10" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="010"></td>
+											<td><input type="text" class="form-control" value="09/10/2019"></td>
+											<td><input type="text" class="form-control" value="Números imaginarios"></td>
+											<td><input type="text" class="form-control" value="55"></td>
+											<td><input type="text" class="form-control" value="Eréndira Gutiérrez Meza"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930236"></td>
+											<td><input type="text" class="form-control" value="Angel Uriel Hernandez Cepeda"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal11" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="011"></td>
+											<td><input type="text" class="form-control" value="14/10/2019"></td>
+											<td><input type="text" class="form-control" value="Estructuras de repetición"></td>
+											<td><input type="text" class="form-control" value="67"></td>
+											<td><input type="text" class="form-control" value="Mario Alberto Gómez Rodríguez"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930474"></td>
+											<td><input type="text" class="form-control" value="Daniela Estefania Huerta Vázquez"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+                <!-- Edit modal -->
+				<div id="edit_modal12" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="012"></td>
+											<td><input type="text" class="form-control" value="14/10/2019"></td>
+											<td><input type="text" class="form-control" value="Estructuras de repetición"></td>
+											<td><input type="text" class="form-control" value="67"></td>
+											<td><input type="text" class="form-control" value="Mario Alberto Gómez Rodríguez"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930013"></td>
+											<td><input type="text" class="form-control" value="Daniela Lizeth Guzman Vazquez"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal13" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="013"></td>
+											<td><input type="text" class="form-control" value="14/10/2019"></td>
+											<td><input type="text" class="form-control" value="Estructuras de repetición"></td>
+											<td><input type="text" class="form-control" value="67"></td>
+											<td><input type="text" class="form-control" value="Mario Alberto Gómez Rodríguez"></td>
+											<td><input type="text" class="form-control" value="Asesorías"></td>
+											<td><input type="text" class="form-control" value="1930007"></td>
+											<td><input type="text" class="form-control" value="Maria Fernanda Coronado Alejos"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal14" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="014"></td>
+											<td><input type="text" class="form-control" value="18/10/2019"></td>
+											<td><input type="text" class="form-control" value="Personal"></td>
+											<td><input type="text" class="form-control" value="60"></td>
+											<td><input type="text" class="form-control" value="Mario Humberto Rodríguez Chávez"></td>
+											<td><input type="text" class="form-control" value="Tutorías"></td>
+											<td><input type="text" class="form-control" value="1930011"></td>
+											<td><input type="text" class="form-control" value="Amaris Aglahel Cerda Porras"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+				<!-- Edit modal -->
+				<div id="edit_modal15" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header bg-transparent">
+								<h5 class="modal-title">Edit table</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="table-responsive">
+								<table class="table"> 
+									<thead>
+										<tr>
+											<th>ID de la tutoría </th>
+								            <th>Fecha de sesión</th>
+								            <th>Tema atendido</th>
+								            <th>Núm. Empleado (tutor)</th>
+								            <th>Nombre del tutor</th>
+								            <th>Departamento</th>	
+								            <th>Matrícula</th>	
+								            <th>Nombre del alumno</th>
+								            <th>Carrera</th>										
+								            <!--<th class="col-xs-1">Action</th>-->
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><input type="text" class="form-control" value="015"></td>
+											<td><input type="text" class="form-control" value="23/10/2019"></td>
+											<td><input type="text" class="form-control" value="Personal"></td>
+											<td><input type="text" class="form-control" value="60"></td>
+											<td><input type="text" class="form-control" value="Mario Humberto Rodríguez Chávez"></td>
+											<td><input type="text" class="form-control" value="Tutorías"></td>
+											<td><input type="text" class="form-control" value="1930161"></td>
+											<td><input type="text" class="form-control" value="Danely Michel Vazquez Romo"></td>
+											<td><input type="text" class="form-control" value="ITI"></td>
+											<!--<td class="text-center">
+												<div class="list-icons">
+							                		<a href="#" class="list-icons-item"><i class="icon-plus3 font-size-base"></i></a>
+							                		<a href="#" class="list-icons-item"><i class="icon-cross2 font-size-base"></i></a>
+							                	</div>
+											</td>-->
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="modal-footer bg-transparent">
+								<button type="button" class="btn btn-link" data-dismiss="modal">Cerrar</button>
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Guardar cambios</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /edit modal -->
+
+
+
+                <!-- Remove modal -->
+				<div id="remove_modal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title">Confirmar acción</h5>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+
+							<div class="modal-body">
+								<div>Ingrese los datos para continuar.</div>
+
+								<div class="form-group row">
+									<label class="col-form-label col-lg-2">Usuario:</label>
+									<div class="col-lg-7">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+
+								<div class="form-group row">
+									<label class="col-form-label col-lg-2">Contraseña:</label>
+									<div class="col-lg-7">
+										<input type="password" class="form-control">
+									</div>
+								</div>
+							</div>
+
+							
+
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-dismiss="modal">Borrar</button>
+								<button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /remove modal -->
 
 					<table class="table datatable-basic">
 						<thead>
 							<tr>
-							    <th>ID</th>	
-								<th>Nombre del empleado</th>
-								<th>Correo</th>
-								<th>Fecha de salida</th>
-								<th>Fecha de ingreso</th>
+							    <th>ID de la tutoría </th>
+								<th>Fecha de sesión</th>
+								<th>Tema atendido</th>
+								<th>Núm. Empleado (tutor)</th>
+								<th>Nombre del tutor</th>
+								<th>Departamento</th>
+								<th>Matrícula</th>	
+								<th>Nombre del alumno</th>
+								<th>Carrera</th>
+								<th> </th>
 								
 								<!-- <th class="text-center">Actions</th> -->
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>123</td>
-								<td>Anel Baéz Guerrero</td>
-								<td>anel.bg01@gmail.com</td>
-								<td>21 de Octubre 2019</td>
-								<td>28 de Octubre 2019</td>
+								<td>001</td>
+								<td>18/10/2019</td>
+								<td>Seguimiento Académico</td>
+								<td>60</td>
+								<td>Mario Humberto Rodríguez Chávez</td>
+								<td>Tutorías</td>
+								<td>1930526</td>
+								<td>Jesus Eduardo Uriegas Ibarra</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal1">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+
 								<!--
 								<td><span class="badge badge-success">Active</span></td>
 								<td class="text-center">
@@ -1392,11 +2287,25 @@
 								</td> -->
 							</tr>
 							<tr>
-								<td>456</td>
-								<td>Jose Arturo Alcocer Morales</td>
-								<td>josearturo@gmail.com</td>
-								<td>28 de Octubre 2019</td>
-								<td>4 de Noviembre 2019</td>
+								<td>002</td>
+								<td>01/10/2019</td>
+								<td>Personal</td>
+								<td>60</td>
+								<td>Mario Humberto Rodríguez Chávez</td>
+								<td>Tutorías</td>
+								<td>1930439</td>
+								<td>Sandra Anel Báez Guerrero</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal2">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
 							</tr>
 								<!--
 								<td><span class="badge badge-secondary">Inactive</span></td>
@@ -1417,11 +2326,25 @@
 								</td>
 							</tr> -->
 							<tr>
-								<td>789</td>
-								<td>Eduardo Uriegas Ibarra</td>
-								<td>uriegas421@gmail.com</td>
-								<td>11 de Noviembre 2019</td>
-								<td>18 de Noviembre 2019</td>
+								<td>003</td>
+								<td>24/10/2019</td>
+								<td>Orientación</td>
+								<td>60</td>
+								<td>Mario Humberto Rodríguez Chávez</td>
+								<td>Tutorías</td>
+								<td>1930427</td>
+								<td>Andrea Joseline Charles Santos</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal3">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
 							</tr>
 								<!--
 								<td><span class="badge badge-danger">Suspended</span></td>
@@ -1442,11 +2365,25 @@
 								</td>
 							</tr> -->
 							<tr>
-								<td>897</td>
-								<td>Eduardo Castro Reyes</td>
-								<td>edward@gmail.com</td>
-								<td>9 de Diciembre 2019</td>
-								<td>16 de Diciembre 2019</td>
+								<td>004</td>
+								<td>17/10/2019</td>
+								<td>Algoritmos</td>
+								<td>48</td>
+								<td>Jorge Arturo Hernández Almazán</td>
+								<td>Asesorías</td>
+								<td>1930329</td>
+								<td>Aldo Puga Vega</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal4">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
 							</tr>
 								<!--
 								<td><span class="badge badge-info">Pending</span></td>
@@ -1467,11 +2404,25 @@
 								</td>
 							</tr> -->
 							<tr>
-								<td>147</td>
-								<td>Alexia Lizeth Guerrero Reyes</td>
-								<td>lizeth@gmail.com</td>
-								<td>6 de Enero 2020</td>
-								<td>13 de Enero 2020</td>
+								<td>005</td>
+								<td>08/10/2019</td>
+								<td>Virtualización</td>
+								<td>48</td>
+								<td>Jorge Arturo Hernández Almazán</td>
+								<td>Asesorías</td>
+								<td>1930256</td>
+								<td>Jose Arturo Alcocer Morales</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal5">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
 							</tr>
 								<!--
 								<td><span class="badge badge-secondary">Inactive</span></td>
@@ -1491,7 +2442,226 @@
 									</div>
 								</td>
 							</tr> -->
-						
+							<tr>
+								<td>006</td>
+								<td>08/10/2019</td>
+								<td>Virtualización</td>
+								<td>48</td>
+								<td>Jorge Arturo Hernández Almazán</td>
+								<td>Asesorías</td>
+								<td>1930167</td>
+								<td>Angel Martin Reyes Balboa</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal6">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>007</td>
+								<td>09/10/2019</td>
+								<td>Números imaginarios</td>
+								<td>55</td>
+								<td>Eréndira Gutiérrez Meza</td>
+								<td>Asesorías</td>
+								<td>1930257</td>
+								<td>Ana Gabriela Lopez Reyes</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal7">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>008</td>
+								<td>09/10/2019</td>
+								<td>Números imaginarios</td>
+								<td>55</td>
+								<td>Eréndira Gutiérrez Meza</td>
+								<td>Asesorías</td>
+								<td>1930611</td>
+								<td>Estefany Sarai Hernandez Vidales</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal8">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>009</td>
+								<td>09/10/2019</td>
+								<td>Números imaginarios</td>
+								<td>55</td>
+								<td>Eréndira Gutiérrez Meza</td>
+								<td>Asesorías</td>
+								<td>1930468</td>
+								<td>Karen Lizeth Garcia Rivera</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal9">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>010</td>
+								<td>09/10/2019</td>
+								<td>Números imaginarios</td>
+								<td>55</td>
+								<td>Eréndira Gutiérrez Meza</td>
+								<td>Asesorías</td>
+								<td>1930236</td>
+								<td>Angel Uriel Hernandez Cepeda</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal10">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>011</td>
+								<td>14/10/2019</td>
+								<td>Estructuras de repetición</td>
+								<td>67</td>
+								<td>Mario Alberto Gómez Rodríguez</td>
+								<td>Asesorías</td>
+								<td>1930474</td>
+								<td>Daniela Estefania Huerta Vázquez</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal11">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>012</td>
+								<td>14/10/2019</td>
+								<td>Estructuras de repetición</td>
+								<td>67</td>
+								<td>Mario Alberto Gómez Rodríguez</td>
+								<td>Asesorías</td>
+								<td>1930013</td>
+								<td>Daniela Lizeth Guzman Vazquez</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal12">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>013</td>
+								<td>14/10/2019</td>
+								<td>Estructuras de repetición</td>
+								<td>67</td>
+								<td>Mario Alberto Gómez Rodríguez</td>
+								<td>Asesorías</td>
+								<td>1930007</td>
+								<td>Maria Fernanda Coronado Alejos</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal13">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>014</td>
+								<td>18/10/2019</td>
+								<td>Personal</td>
+								<td>60</td>
+								<td>Mario Humberto Rodríguez Chávez</td>
+								<td>Tutorías</td>
+								<td>1930011</td>
+								<td>Amaris Aglahel Cerda Porras</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal14">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
+							<tr>
+								<td>015</td>
+								<td>23/10/2019</td>
+								<td>Personal</td>
+								<td>60</td>
+								<td>Mario Humberto Rodríguez Chávez</td>
+								<td>Tutorías</td>
+								<td>1930161</td>
+								<td>Danely Michel Vazquez Romo</td>
+								<td>ITI</td>
+								<td> 
+									<div class="list-icons">
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#edit_modal15">
+											<i class="icon-pencil7"></i>
+										</a>
+										<a href="#" class="list-icons-item" data-toggle="modal" data-target="#remove_modal">
+											<i class="icon-trash"></i>
+										</a>
+									</div>
+								</td>
+							</tr>
+
 								<!--
 								<td><a href="#">Woldt</a></td>
 								<td><a href="#">Business Services Sales Representative</a></td>
